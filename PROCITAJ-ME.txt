@@ -1,0 +1,73 @@
+VP MERKUR — SAMOSTALAN HTML PAKET
+================================
+
+POKRETANJE
+1. Raspakujte ceo ZIP. Ne otvarajte index.html iz samog ZIP pregledača.
+2. Dvoklikom otvorite index.html u savremenom Chrome, Edge, Firefox ili Safari pregledaču.
+3. Nisu potrebni Node.js, npm, internet, server ili postupak buildovanja.
+4. Pri prvom ulasku prikazuje se potvrda punoletstva 18+.
+
+Ako upravljani/poslovni pregledač zabranjuje otvaranje file:// adresa,
+postavite folder na statički hosting ili, uz instaliran Python, iz ovog
+foldera pokrenite: python3 -m http.server 8080
+To je opcioni način posluživanja istih fajlova, bez buildovanja.
+Direktna file:// provera nije moguća u ovdašnjem upravljanom Chromiumu
+zbog njegove administratorske politike; funkcionalne provere koriste
+običan lokalni HTTP server, bez Vitea ili kompilacije.
+
+STRUKTURA
+index.html                 Glavni HTML fajl
+css/styles.css             Dizajn i prilagođavanje mobilnim ekranima
+js/app.js                  Stranice, filteri, korpa, favoriti i upit
+js/catalog.js              Katalog koji stranica stvarno koristi
+js/catalog.json            Isti početni katalog u JSON obliku za uvoz
+js/icons.js                Lokalne SVG ikonice interfejsa (nisu slike proizvoda)
+assets/logo.svg            Svetli logo
+assets/logo-dark.svg       Tamnozeleni logo
+assets/fonts/              Lokalni fontovi i licenca
+assets/proizvodi/           Ovde naknadno dodajte svoje fotografije
+UREDJIVANJE.md             Primeri unošenja slika, cena i artikala
+LICENCE.txt                Licence uključenih fontova i UI ikonica
+
+SADRŽAJ
+- 228 kataloških stavki u 7 glavnih kategorija i njihovim potkategorijama.
+- Bez fotografija, crteža ili generisanih slika proizvoda. Prostori su prazni.
+- Pretraga sa podrškom za pretragu bez dijakritika, brendovi, potkategorije,
+  oznaka 18+, status cene, sortiranje i paginacija.
+- Detalji proizvoda, količine, favoriti i korpa koji ostaju u pregledaču.
+- Alkoholna i energetska pića imaju oznaku 18+. Izričito bezalkoholne
+  varijante piva i bezalkoholni dečiji šampanjac nisu označeni kao alkoholni.
+- Korpa priprema tekstualni upit (.txt) za ručno prosleđivanje prodavcu.
+
+CENE I PAKOVANJA
+Nisu izmišljene prodajne cene, zalihe, zapremine ili rokovi isporuke.
+Sve početne cene i zalihe su null: prikazuju se 'Cena na upit' i
+'Dostupnost na upit'. Bez unetih cena nema lažnog ukupnog iznosa od 0 RSD.
+Za zbir koji sadrži nepoznatu cenu prikazuje se 'Po potvrdi ponude'.
+Generički ukusi, sorte vina i predložene kombinacije zanatskih piva jesu
+kataloške stavke za potvrdu, ne tvrdnja da je određen SKU dostupan.
+Ukusi nektara nisu proizvoljno kombinovani sa svakim brendom.
+
+OGRANIČENJA
+Ovo je frontend, ne aktivna internet prodavnica. Nema servera, naplate,
+automatskog slanja porudžbina ili e-mail poruka. Upit se preuzima kao
+tekstualni fajl; posetilac ga sam prosleđuje prodavcu. Kontakt podaci
+se ne čuvaju u localStorage. Newsletter i nalog nisu povezani.
+Prikazani logo je vektorska rekonstrukcija referentnog logotipa iz dizajna;
+za konačno objavljivanje možete ga zameniti originalnim fajlom brenda.
+
+PODACI U PREGLEDAČU
+Korpa: merkur-html-cart, favoriti: merkur-html-favorites (localStorage).
+Punoletstvo: merkur-html-age (sessionStorage). Ako pregledač zabrani
+lokalno čuvanje, prikaz i korpa i dalje rade u memoriji do osvežavanja.
+18+ dijalog jeste ulazno upozorenje, ne provera identiteta.
+
+OBJAVLJIVANJE
+Možete preneti ceo sadržaj ovog foldera na običan statički hosting.
+Putanje su relativne; podfolderi se moraju sačuvati. Nisu potrebni CDN,
+spoljašnji fontovi ili slike. Pre stvarne prodaje uneti tačne podatke firme,
+uslove kupovine, povraćaj, privatnost, cene, deklaracije i dostupnost;
+povezati pouzdan prodajni sistem i stvarnu proveru uzrasta.
+
+Prethodna React verzija projekta nije menjana ovim HTML paketom.
+Okruženje nije ponovo objavljeno niti je konfiguracioni nacrt menjan.
